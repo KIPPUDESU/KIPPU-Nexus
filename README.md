@@ -24,3 +24,5 @@ export async function fetchBooks(type: string, keyword: string): Promise<{ total
   return { total: data.totalItems, books }
 }
 ```
+
+![KIPPU](./images/kippu.png)

@@ -1,11 +1,20 @@
 <template>
-    <n-layout-header
+    <div class="relative">
+      <!-- 全屏图片：w-full 保证宽度占满父容器，object-cover 保证图片裁剪填充 -->
+      <img src="../../images/tohobanner.png" alt="banner" class="w-full h-auto object-cover" />
+      <!-- 标题被绝对定位在图片上：
+       left-1/2 与 transform -translate-x-1/2 保证水平居中
+       bottom-20 定位于底部偏上 -->
+      <h1 class="absolute left-1/2 bottom-4 transform -translate-x-1/2 text-white text-4xl z-10">
+        KIPPU NEXUS
+      </h1>
+      <n-layout-header
     class="flex items-center justify-between px-4"
     >
-    <h1>KIPPU NEXUS</h1>
     以下定义切换黑暗模式的开关
     <n-switch v-model:checked="isDark" @update:checked="toggleTheme" />
     </n-layout-header>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -22,3 +31,9 @@ function toggleTheme(val: boolean) {
 }
 
 </script>
+
+<style>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+</style>
