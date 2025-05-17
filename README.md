@@ -26,3 +26,7 @@ export async function fetchBooks(type: string, keyword: string): Promise<{ total
 ```
 
 ![KIPPU](./images/kippu.png)
+
+好崩溃啊tailwindcss还是不太适应
+整了好久问ai，编辑不明白，还得多花点时间
+~~但是还是挺喜欢这种组件编辑方式的，感觉完全掌握以后写起来肯定很爽~~
