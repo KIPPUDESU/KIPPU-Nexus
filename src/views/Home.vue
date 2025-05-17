@@ -1,20 +1,18 @@
 <template>
-  <Layout>
-    <Header />
+  
+    <Header @search="handleSearch" />
     <div class="p-4">
-      <SearchBar @search="handleSearch" />
       <ResultInfo :total="total" />
       <ResultList :books="books" />
     </div>
     <Footer />
-  </Layout>
+  
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { defineProps, ref } from 'vue'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
-import SearchBar from '../components/SearchBar.vue'
 import ResultInfo from '../components/ResultInfo.vue'
 import ResultList from '../components/ResultList.vue'
 // 谷歌book

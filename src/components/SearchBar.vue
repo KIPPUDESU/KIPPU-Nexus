@@ -1,22 +1,42 @@
 <template>
-  <div class="flex space-x-2">
+  <div
+    class="flex items-center max-w-3xl w-full bg-white bg-opacity-70 shadow-md rounded-lg overflow-hidden"
+  >
+    <!-- 分类选择 -->
     <n-select
+      class="min-w-[5.5rem] border-r border-gray-300 h-full"
       v-model:value="type"
       :options="[
         { label: '标题', value: 'intitle' },
         { label: '作者', value: 'inauthor' },
         { label: '出版社', value: 'inpublisher' }
       ]"
+      size="medium"
     />
+
+    <!-- 关键词输入 -->
     <n-input
+      class="flex-1 border-none focus:ring-0 focus:outline-none"
       v-model:value="keyword"
       placeholder="输入关键词"
       @keyup.enter="onSearch"
       clearable
+      size="medium"
     />
-    <n-button @click="onSearch">搜索</n-button>
+
+    <!-- 搜索按钮 -->
+    <n-button
+      type="primary"
+      ghost
+      size="medium"
+      class="rounded-none rounded-r-lg h-full"
+      @click="onSearch"
+    >
+      搜索
+    </n-button>
   </div>
 </template>
+
 
 <script setup lang="ts">
 // 前者用于声明该组件将发射哪些自定义事件，并指定这些事件的参数类型
@@ -42,3 +62,7 @@ function onSearch() {
   }
 }
 </script>
+
+<style>
+@import "tailwindcss"
+</style>
