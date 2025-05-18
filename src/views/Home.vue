@@ -1,16 +1,30 @@
 <template>
-  
+  <div class="flex flex-col min-h-screen
+  bg-gradient-to-br from-purple-500 to-gray-100
+  ">
     <Header @search="handleSearch" />
+    <div class="
+      absolute
+      inset-x-0
+      top-15 sm:top-25 md:top-40 lg:top-55 xl:top-95
+      flex
+      justify-center
+      z-20 px-4
+      w-full
+      ">
+        <SearchBar @search="handleSearch" />
+      </div>
     <div class="p-4">
       <ResultInfo :total="total" />
       <ResultList :books="books" />
     </div>
-    <Footer />
-  
+    <Footer class="mt-auto" />
+    </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref } from 'vue'
+import { ref } from 'vue'
+import SearchBar from '../components/SearchBar.vue'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 import ResultInfo from '../components/ResultInfo.vue'
