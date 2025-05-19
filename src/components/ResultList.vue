@@ -7,6 +7,6 @@
 <script setup lang="ts">
 import BookCard from './BookCard.vue'
 import { defineProps } from 'vue'
-interface Book { id: string; title: string; authors: string[]; thumbnail: string }
+interface Book { id: string; title: string; authors: string[]; thumbnail: string; infoLink: string }
 const { books } = defineProps<{ books: Book[] }>()
 </script>

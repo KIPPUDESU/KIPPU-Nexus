@@ -8,4 +8,5 @@
 </script>
 
 <style>
+@import './styles/tailwind.css'
 </style>

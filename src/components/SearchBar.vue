@@ -11,6 +11,7 @@
     <div class="relative inline-block w-1/8">
     <div
       class="
+      flex
       text-sm 
       text-gray-800 
       bg-white
@@ -22,12 +23,15 @@
       focus:outline-none 
       focus:ring-2 
       focus:ring-violet-300 
-      backdrop-blur-lg mr-1 transition-all duration-300 ease-in-out transform scale-95 hover:scale-100 cursor-pointer
+      backdrop-blur-sm 
+      mr-1 transition-all duration-300 ease-in-out transform scale-95 hover:scale-100 cursor-pointer
       opacity-85
+      items-center justify-between gap-1
       "
       @click="toggleDropdown"
     >
       {{ selectedLabel }}
+      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon" class="size-4 fill-gray-400"><path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"></path></svg></a>
     </div>
     <!-- 此处提供过渡动画编辑 -->
      <!-- 进入时的整体过渡
@@ -72,14 +76,14 @@
       focus:ring-2
       focus:ring-violet-300
       rounded-l-md
-      backdrop-blur-lg
+      backdrop-blur-xs
       shadow-md
       text-gray-800
       placeholder-gray-500
       opacity-85
       "
       v-model="keyword"
-      placeholder="输入关键词..."
+      placeholder="愿你找到想要的书..."
       @keyup.enter="onSearch"
     />
 
@@ -166,6 +170,3 @@ const selectedLabel = computed<string>(() => {
 })
 </script>
 
-<style>
-@import "tailwindcss"
-</style>
