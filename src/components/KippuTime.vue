@@ -1,7 +1,8 @@
 <template>
     <header
     class="
-    text-white
+    text-black
+    dark:text-white
     py-4
     text-center"
     >
@@ -9,7 +10,7 @@
         text-6xl sm:text-7xl md:text-8xl lg:text-9xl:text-10xl
         font-mono
         font-bold
-        drop-shadow-xl
+        drop-shadow-2xl
         ">
     {{ time }}
     </p>

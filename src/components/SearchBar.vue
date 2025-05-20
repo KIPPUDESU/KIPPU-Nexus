@@ -6,6 +6,7 @@
   p-4
   bg-transparent
   w-[60vw]
+  drop-shadow-2xl
   ">
     <!-- 分类选择 -->
     <div class="relative inline-block w-1/8">
@@ -26,6 +27,7 @@
       backdrop-blur-sm 
       mr-1 transition-all duration-300 ease-in-out transform scale-95 hover:scale-100 cursor-pointer
       opacity-85
+      drop-shadow-2xl
       items-center justify-between gap-1
       "
       @click="toggleDropdown"
@@ -81,6 +83,7 @@
       text-gray-800
       placeholder-gray-500
       opacity-85
+      drop-shadow-2xl
       "
       v-model="keyword"
       placeholder="愿你找到想要的书..."
@@ -94,8 +97,8 @@
       rounded-r-md
       bg-gradient-to-r
       from-violet-300 to-gray-700
+      dark:from-blue-950 dark:to-black
       text-white
-      hover:bg-violet-600
       focus:outline-none
       focus:ring-2
       focus:ring-violet-300
@@ -103,6 +106,7 @@
       transition-all
       duration-300
       opacity-85
+      drop-shadow-2xl
       "
       @click="onSearch"
     >

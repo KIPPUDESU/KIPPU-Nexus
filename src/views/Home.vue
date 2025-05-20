@@ -1,7 +1,9 @@
 <template>
   <div class="flex flex-col min-h-screen
-  bg-gradient-to-br from-purple-500 to-gray-100
-  
+  bg-gradient-to-br
+  from-white to-pink-200
+   dark:from-indigo-500 dark:to-gray-800
+  transition-colors duration-500 ease-in-out
   ">
     <Header @search="handleSearch" />
     <div class="
