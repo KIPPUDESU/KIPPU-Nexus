@@ -51,43 +51,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, watch } from 'vue'
+import { useDark } from '@vueuse/core'
+// import { ref } from 'vue';
 
-// 响应式，初始值
+const isDark = useDark()
 // const isDark = ref(false)
-// 接受布尔参数，boolean用来明确只能接受t与f（ts类型安全）
-// document.documentElement 指的是整个页面的 <html> 元素。
-// 调用 classList.toggle('dark', val) 实际上是利用 DOM API 来操作 HTML 元素的 CSS
-
-// function toggleTheme(val: boolean) {
-//     // toggle 方法用于添加或移除指定的类名
-//     // 如果 val 为 true，则添加 'dark' 类
-//   document.documentElement.classList.toggle('dark', val)
-// }
-// 以上是原有的预设，现在都被tailwind提供的简易形式替代了
-
-const isDark = ref(false)
-
-onMounted(() => {
-  // 先利用钩子把保存好的处理了
-  const storedTheme = localStorage.getItem('theme')
-  if (storedTheme) {
-    isDark.value = storedTheme === 'dark'
-  }
-  else {
-    // 初次进入（无本地）检测系统偏好
-    isDark.value = window.matchMedia('(prefers-color-scheme: dark)').matches
-  }
-  // 由isDark.value决定是否变动dark的类
-  document.documentElement.classList.toggle('dark', isDark.value)
-})
-
-watch(isDark, (newVal) => {
-  console.log(newVal)
-  document.documentElement.classList.toggle('dark', newVal)
-  localStorage.setItem('theme', newVal ? 'dark' : 'light')
-})
-
 
 </script>
 
