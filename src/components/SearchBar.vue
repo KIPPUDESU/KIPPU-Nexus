@@ -96,8 +96,8 @@
       py-2 px-6
       rounded-r-md
       bg-gradient-to-r
-      from-violet-300 to-gray-700
-      dark:from-blue-950 dark:to-black
+      from-blue-950 to-black
+      dark:from-violet-300 dark:to-gray-700
       text-white
       focus:outline-none
       focus:ring-2
