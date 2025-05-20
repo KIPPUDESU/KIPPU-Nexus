@@ -54,7 +54,7 @@
 import { useDark } from '@vueuse/core'
 // import { ref } from 'vue';
 
-const isDark = useDark()
+const isDark = useDark({disableTransition: false})
 // const isDark = ref(false)
 
 </script>
