@@ -36,10 +36,11 @@
       right-4
       z-20
       ">
+      <!-- https://www.naiveui.com/zh-CN/dark/components/switch -->
       <n-switch 
-        v-model:checked="isDark" 
+        v-model:value="isDark"
         :checked-value="true"
-        :nochecked-value="false"
+        :unchecked-value="false"
         checked-content="🌙"
         unchecked-content="☀️"
         size="small"
@@ -82,6 +83,7 @@ onMounted(() => {
 })
 
 watch(isDark, (newVal) => {
+  console.log(newVal)
   document.documentElement.classList.toggle('dark', newVal)
   localStorage.setItem('theme', newVal ? 'dark' : 'light')
 })
