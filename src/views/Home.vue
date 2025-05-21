@@ -5,7 +5,7 @@
    dark:from-indigo-500 dark:to-gray-800
   transition-colors duration-500 ease-in-out
   ">
-    <Header @search="handleSearch" />
+    <Header />
     <div class="
       absolute
       inset-x-0
@@ -26,31 +26,32 @@
       z-20 px-4
       w-full
       ">
-        <SearchBar @search="handleSearch" />
+        <!-- <SearchBar @search="handleSearch" /> -->
+         <SearchBar />
       </div>
     <div class="p-4">
-      <ResultInfo :total="total" />
-      <ResultList :books="books" />
+      <!-- <ResultInfo :total="total" />
+      <ResultList :books="books" /> -->
     </div>
     <Footer class="mt-auto" />
     </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+// import { ref } from 'vue'
 import SearchBar from '../components/SearchBar.vue'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
-import ResultInfo from '../components/ResultInfo.vue'
-import ResultList from '../components/ResultList.vue'
+// import ResultInfo from '../components/ResultInfo.vue'
+// import ResultList from '../components/ResultList.vue'
 import KippuTime from '../components/KippuTime.vue'
 // 谷歌book
-import { fetchBooks } from '../api/books'
+// import { fetchBooks } from '../api/books'
 
-interface Book { id: string; title: string; authors: string[]; thumbnail: string; infoLink: string }
+// interface Book { id: string; title: string; authors: string[]; thumbnail: string; infoLink: string }
 
-const books = ref<Book[]>([])
-const total = ref(0)
+// const books = ref<Book[]>([])
+// const total = ref(0)
 
 // function handleSearch({ type, keyword }: { type: string; keyword: string }) {
 //   // TODO: 调用 API，暂用假数据模拟
@@ -58,13 +59,13 @@ const total = ref(0)
 //   books.value = []
 // }
 
-async function handleSearch({ type, keyword }: { type: string; keyword: string }) {
-  try {
-    const { total: t, books: bs } = await fetchBooks(type, keyword)
-    total.value = t
-    books.value = bs
-  } catch (e) {
-    console.error(e)
-  }
-}
+// async function handleSearch({ type, keyword }: { type: string; keyword: string }) {
+//   try {
+//     const { total: t, books: bs } = await fetchBooks(type, keyword)
+//     total.value = t
+//     books.value = bs
+//   } catch (e) {
+//     console.error(e)
+//   }
+// }
 </script>

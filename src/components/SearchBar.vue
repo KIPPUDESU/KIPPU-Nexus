@@ -123,6 +123,10 @@
 // 前者用于声明该组件将发射哪些自定义事件，并指定这些事件的参数类型
 import { defineEmits, ref, computed } from 'vue';
 
+// 因为现在去掉了home里面的传输逻辑等，所以现在在里添加一个use方便点击跳转
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
 // defineEmits 声明了一个名为 search 的事件（子传父）
 const emit = defineEmits<{
     // type：表示搜索的类别，类型为 string。
@@ -154,6 +158,8 @@ function onSearch(): void {
   const kw = keyword.value.trim()
   if (kw) {
     emit('search', { type: type.value, keyword: kw })
+    // 新增逻辑，给定位的路由传俩值
+    router.push({ path: '/booksshelf', query: { type: type.value, keyword: kw } })
   }
 }
 

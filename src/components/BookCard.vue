@@ -7,7 +7,9 @@
     rel="noopener"
     class="block hover:shadow-lg transition-shadow duration-200"
   >
-    <n-card hoverable class="w-48">
+    <n-card hoverable class="w-48
+    drop-shadow-xl
+    ">
     <img :src="book.thumbnail || kippuimg" 
     alt="封面" 
     class="w-full h-64 object-cover mb-2" />

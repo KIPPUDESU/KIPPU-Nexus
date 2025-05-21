@@ -1,10 +1,20 @@
 // 前者创建路由实例，后者让vue-router使用内存历史记录模式让历史记录更干净
 import { createRouter, createMemoryHistory } from "vue-router";
 import Home from '../views/Home.vue'
+import BooksShelf from "../components/BooksShelf.vue";
 
 // component的意思是组件，此处定义路由规则
 const routes = [
-    { path: '/', component: Home }
+    { path: '/',
+      name: 'Home', 
+      component: Home,
+      meta: { index: 0 }
+    },
+    { path: '/booksshelf',
+      name: 'BooksShelf',
+      component: BooksShelf,
+      meta: { index: 1 }
+    },
 ]
 
 // 把前面创建的router数组导出
