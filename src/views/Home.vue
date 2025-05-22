@@ -20,7 +20,7 @@
     <div class="
       absolute
       inset-x-0
-      top-50 sm:top-50 md:top-60 lg:top-70 xl:top-80
+      top-50 sm:top-50 md:top-60 lg:top-70 xl:top-70
       flex
       justify-center
       z-20 px-4

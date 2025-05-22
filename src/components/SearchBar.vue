@@ -3,9 +3,8 @@
   flex 
   items-center 
   justify-center 
-  p-4
   bg-transparent
-  w-[60vw]
+  w-9/12
   drop-shadow-2xl
   ">
     <!-- 分类选择 -->
@@ -13,20 +12,18 @@
     <div
       class="
       flex
-      text-sm 
-      text-gray-800 
+      text-sm sm:text-sm md:text-xl lg:text-md xl:text-xl 
+      font-bold
+      text-gray-700
       bg-white
-      border 
-      border-violet-400 
-      rounded-md 
-      p-2 
-      shadow-md 
+      h-14
+      p-3
+      shadow-2xl
       focus:outline-none 
-      focus:ring-2 
-      focus:ring-violet-300 
-      backdrop-blur-sm 
+      focus:ring-2
+      backdrop-blur-2xl 
       mr-1 transition-all duration-300 ease-in-out transform scale-95 hover:scale-100 cursor-pointer
-      opacity-85
+      opacity-75
       drop-shadow-2xl
       items-center justify-between gap-1
       "
@@ -53,7 +50,7 @@
       >
     <ul
       v-if="isOpen"
-      class="absolute z-10 mt-1 w-full bg-white bg-opacity-90 border border-violet-400 rounded-md shadow-lg backdrop-blur-lg"
+      class="absolute z-10 mt-1 w-full bg-white bg-opacity-90 border-violet-400  shadow-lg backdrop-blur-lg"
     >
       <li
         v-for="option in options"
@@ -70,19 +67,22 @@
     <!-- 关键词输入 -->
     <input
       class="
-      flex-1
+      flex
+      w-10/12
       bg-white bg-opacity-80
-      border border-violet-400
+      border-violet-400
+      text-lg sm:text-sm md:text-md lg:text-lg xl:text-xl
       py-2 px-3
+      h-14
       focus:outline-none
       focus:ring-2
       focus:ring-violet-300
-      rounded-l-md
-      backdrop-blur-xs
+      backdrop-blur-2xl
       shadow-md
       text-gray-800
       placeholder-gray-500
-      opacity-85
+      placeholder:text-xl
+      opacity-75
       drop-shadow-2xl
       "
       v-model="keyword"
@@ -94,7 +94,7 @@
     <button
       class="
       py-2 px-6
-      rounded-r-md
+      h-14
       bg-gradient-to-r
       from-blue-950 to-black
       dark:from-violet-300 dark:to-gray-700

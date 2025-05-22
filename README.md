@@ -1,4 +1,4 @@
-## KIPPU NEXUS
+# KIPPU NEXUS
 
 > 当前项目仅为骨架
 > 后续想要引入tailwindcss完成样式编辑、美化
@@ -24,6 +24,18 @@ export async function fetchBooks(type: string, keyword: string): Promise<{ total
   return { total: data.totalItems, books }
 }
 ```
+## Setup
+开发使用依赖包pnpm
+```bash
+# pnpm
+pnpm install
+```
+开发启动推荐
+```bash
+# pnpm
+pnpm dev
+pnpm run dev
+```
 
 
 好崩溃啊tailwindcss还是不太适应  
@@ -40,6 +52,10 @@ export async function fetchBooks(type: string, keyword: string): Promise<{ total
 ### 在haruki的帮助下解决了头疼的问题
 现在终于是有点模样了  
 **说起来刚刚写日期的适合才突然意识到今天是什么日子**
+
+### 05.5.21
+### 把早上突发奇想的网页切换方式加到里面来了，虽然有点bug但是效果也不算差
+把搜索框样式也优化了  
 
 在haruki的推荐下稍微学到了新的方式，所以利用上课时间整理了一点东西
 [VueUse](https://www.notion.so/UesDark-1f9dfa5db3b980e18f8fd141092c823a?pvs=4)
