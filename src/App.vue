@@ -78,16 +78,15 @@ function leave(el: Element, done: () => void) {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* 路由组件内容绝对定位 */
 .view-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
+  min-height: 100vh;
 }
 
 /* 滑动翻页 */

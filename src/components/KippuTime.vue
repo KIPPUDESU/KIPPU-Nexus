@@ -3,7 +3,7 @@
     class="
     text-black
     dark:text-white
-    py-4
+    py-10
     text-center"
     >
     <p class="

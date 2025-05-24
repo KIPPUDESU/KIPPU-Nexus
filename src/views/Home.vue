@@ -14,6 +14,7 @@
       justify-center
       z-20 px-4
       w-full
+      h-full
       ">
         <KippuTime />
       </div>
@@ -33,7 +34,7 @@
       <!-- <ResultInfo :total="total" />
       <ResultList :books="books" /> -->
     </div>
-    <Footer class="mt-auto" />
+    <Footer class="absolute w-full top-193" />
     </div>
 </template>
 
