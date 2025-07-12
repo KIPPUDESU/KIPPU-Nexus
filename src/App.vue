@@ -9,23 +9,23 @@
         @before-leave="beforeLeave"
         @leave="leave"
       >
-        <component :is="Component" :key="route.name" class="view-wrapper"/>
+        <component :is="Component" :key="route.name" class="view-wrapper" />
       </transition>
     </router-view>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
-import { ref, computed, watch } from 'vue'
+import { computed, ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
 
-const route = useRoute()
+const route = useRoute();
 
 //记index
-const prevIndex = ref<number>(route.meta.index as number)
+const prevIndex = ref<number>(route.meta.index as number);
 
 //由isForward的真假决定动画方向
-const isForward = ref(true)
+const isForward = ref(true);
 
 //监听路由变化
 // as number防止接收用的new不承认
@@ -33,42 +33,42 @@ watch(
   () => route.meta.index as number,
   (newIndex: number) => {
     // 如果新 index 大于旧 index，就认为是从左往右切换（前进）
-    isForward.value = newIndex > prevIndex.value
+    isForward.value = newIndex > prevIndex.value;
     // 更新 prevIndex
-    prevIndex.value = newIndex
-  }
-)
+    prevIndex.value = newIndex;
+  },
+);
 
 // 根据isForward决定动画
-const transitionName = computed(() =>
-  isForward.value ? 'slide-right' : 'slide-left'
-)
+const transitionName = computed(() => (isForward.value ? 'slide-right' : 'slide-left'));
 
 // 新来
 // function beforeEnter(el: HTMLElement) {（这样写会导致传输宽泛不止html的钩子报错）
 function beforeEnter(el: Element) {
-  const element = el as HTMLElement
-  element.style.position = 'absolute'
-  element.style.top = '0'
-  element.style.left = '0'
-  element.style.width = '100%'
-  element.style.height = '100%'
+  const element = el as HTMLElement;
+  element.style.position = 'absolute';
+  element.style.top = '0';
+  element.style.left = '0';
+  element.style.width = '100%';
+  element.style.height = '100%';
 }
+
 // 旧去
 function beforeLeave(el: Element) {
-  const element = el as HTMLElement
-  element.style.position = 'absolute'
-  element.style.top = '0'
-  element.style.left = '0'
-  element.style.width = '100%'
-  element.style.height = '100%'
+  const element = el as HTMLElement;
+  element.style.position = 'absolute';
+  element.style.top = '0';
+  element.style.left = '0';
+  element.style.width = '100%';
+  element.style.height = '100%';
 }
+
 // el提供的是当前正在离开的元素
 function leave(el: Element, done: () => void) {
-  const element = el as HTMLElement
+  const element = el as HTMLElement;
   // 空用
-  void element
-  setTimeout(() => done(),)
+  void element;
+  setTimeout(() => done());
 }
 </script>
 
