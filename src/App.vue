@@ -76,7 +76,7 @@ function leave(el: Element, done: () => void) {
 /* overlay保证内部可覆盖显示 */
 .overlay {
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
   width: 100%;
   min-height: 100vh;
 }

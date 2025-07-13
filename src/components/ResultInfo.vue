@@ -1,5 +1,7 @@
 <template>
-  <div class="mb-2">找到 {{ Booktotal }} 本书</div>
+  <div class="text-center text-2xl font-bold text-gray-800 my-8">
+    找到 {{ Booktotal }} 本书
+  </div>
 </template>
 
 <script setup lang="ts">

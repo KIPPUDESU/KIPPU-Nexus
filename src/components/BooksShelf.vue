@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+  <div class="min-h-screen bg-gray-100 p-4 sm:p-6 lg:p-8">
     <ResultInfo :total="total" />
     <ResultList :books="books" />
   </div>
